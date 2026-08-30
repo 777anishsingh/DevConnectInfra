@@ -1,0 +1,19 @@
+services:
+  backend:
+    build: ../DevConnectBackend
+    container_name: DevConnectBackend
+    env_file:
+      - ../DevConnectBackend/.env
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ../DevConnectFrontend
+      args:
+        VITE_API_URL: http://localhost:3000
+    container_name: DevConnectFrontend
+    ports:
+      - "5173:80"
+    restart: unless-stopped
