@@ -14,7 +14,7 @@ services:
     build:
       context: ../DevConnectFrontend
       args:
-        VITE_API_URL: http://15.206.203.243/api
+        VITE_API_URL: https://devconnect.anishbutola.in/api
     container_name: DevConnectFrontend
     ports:
       - "127.0.0.1:8080:80"
